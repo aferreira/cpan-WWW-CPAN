@@ -3,7 +3,7 @@ use 5.006;
 use ExtUtils::MakeMaker 6.31; # XXX yes, that's not a nice thing to do
 
 WriteMakefile(
-  NAME         => 'WWW-CPAN',
+  NAME         => 'WWW::CPAN',
   VERSION_FROM => 'lib/WWW/CPAN.pm',
 
   PREREQ_PM => {
