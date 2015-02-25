@@ -2,6 +2,8 @@
 use 5.006;
 use ExtUtils::MakeMaker 6.31; # XXX yes, that's not a nice thing to do
 
+my $EUMM_VERSION = eval $ExtUtils::MakeMaker::VERSION;
+
 WriteMakefile(
   NAME         => 'WWW::CPAN',
   VERSION_FROM => 'lib/WWW/CPAN.pm',
@@ -31,6 +33,13 @@ WriteMakefile(
     'Test::More'       => 0,
 
   },
+  ($EUMM_VERSION > 6.4501 ? (
+    META_MERGE => {
+      resources => {
+        repository => 'http://github.com/aferreira/cpan-WWW-CPAN',
+      }
+    },
+  ) : ()),
   # recommends => { 
   #       'Test::Script' => 0, 
   #}
