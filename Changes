@@ -1,5 +1,9 @@
 Revision history for WWW-CPAN.
 
+0.012   Wed Feb 25 2015
+        - Fixed problem with UTF8 content
+        - Fixed t/03meta.t
+
 0.011   Sat Mar  1 2008
         - try Cache::FileCache rather than Cache::File:
           it seems to work on Windows (at least more than
