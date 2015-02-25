@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.011'; 
+our $VERSION = '0.012';
 
 use Class::Lego::Constructor 0.004 ();
 use parent qw( Class::Accessor Class::Lego::Constructor );
@@ -77,7 +77,14 @@ sub fetch_distmeta {
   my $uri = $self->_build_distmeta_uri(@_);
   my $r = $self->ua->get($uri);
   if ( $r->is_success ) {
-    return $self->j_loader->( $r->content );
+
+    my $content = $r->decoded_content;
+
+    # Back to UTF8 (if needed)
+    utf8::encode($content)
+     unless utf8::is_utf8($content);
+
+    return $self->j_loader->( $content );
   } else {
     carp $r->status_line; # FIXME needs more convincing error handling
     return;
