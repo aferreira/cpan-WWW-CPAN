@@ -1,0 +1,30 @@
+--- #YAML:1.0
+name:                WWW-CPAN
+version:             0.011
+abstract:            CPAN as a web service
+license:             perl
+author:              
+    - Adriano R. Ferreira <ferreira@cpan.org>
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
+    Cache::FileCache:              0
+    Carp:                          0
+    Class::Accessor:               0
+    Class::Lego::Constructor:      0.004
+    Class::Lego::Myself:           0.001
+    Data::Dump::Streamer:          0
+    File::HomeDir:                 0
+    JSON::Any:                     0
+    LWP::UserAgent::Determined:    0
+    parent:                        0
+    Path::Class:                   0
+    Pod::Usage:                    0
+    strict:                        0
+    Test::More:                    0
+    URI:                           0
+    warnings:                      0
+    XML::Simple:                   0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
