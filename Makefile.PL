@@ -21,7 +21,7 @@ WriteMakefile(
     'Class::Lego::Myself'         => 0.001,
     'Carp'             => 0,
 
-    'JSON::Any'        => 0,
+    'JSON::MaybeXS'    => 0,
     'XML::Simple'      => 0,
     # required by bin/cpanq
     'Data::Dump::Streamer' => 0,

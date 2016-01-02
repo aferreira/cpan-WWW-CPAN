@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.012';
+our $VERSION = '0.013';
 
 use Class::Lego::Constructor 0.004 ();
 use parent qw( Class::Accessor Class::Lego::Constructor );
@@ -20,10 +20,9 @@ my $FIELDS = {
                 return LWP::UserAgent::Determined->new( %options );
               },
   j_loader => sub { # json loader sub
-                require JSON::Any;
-                JSON::Any->import; # XXX JSON::Any needs this
-                my $j = JSON::Any->new;
-                return sub { $j->Load(shift); }
+                require JSON::MaybeXS;
+                my $j = JSON::MaybeXS->new;
+                return sub { $j->decode(shift); }
               },
   x_loader => sub { # xml loader sub
                 require XML::Simple;
