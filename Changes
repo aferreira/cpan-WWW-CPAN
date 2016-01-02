@@ -1,5 +1,9 @@
 Revision history for WWW-CPAN.
 
+0.013   Sat Jan  1 2016
+        - Fixes to Makefile.PL (CPAN #43233)
+        - Move from JSON::Any to JSON::MaybeXS (CPAN #102459)
+
 0.012   Wed Feb 25 2015
         - Fixed problem with UTF8 content
         - Fixed t/03meta.t
