@@ -30,7 +30,7 @@ WriteMakefile(
     'Path::Class'          => 0,
     'Pod::Usage'           => 0,
 
-    'Test::More'       => 0,
+    'Test::More'       => 0.17, # can_ok
 
   },
   ($EUMM_VERSION > 6.4501 ? (
@@ -44,8 +44,11 @@ WriteMakefile(
   #       'Test::Script' => 0, 
   #}
   EXE_FILES     => [ 'bin/cpanq' ],
-  LICENSE       => 'perl',
-  AUTHOR        => 'Adriano R. Ferreira <ferreira@cpan.org>',
-  ABSTRACT_FROM => 'lib/WWW/CPAN.pod',
-
+  ($EUMM_VERSION >= 6.31 ? (
+    LICENSE => 'perl',
+  ) : ()),
+  ($EUMM_VERSION >= 6.07 ? (
+    ABSTRACT_FROM => 'lib/WWW/CPAN.pod',
+    AUTHOR        => 'Adriano R. Ferreira <ferreira@cpan.org>'
+  ) : ()),
 );
